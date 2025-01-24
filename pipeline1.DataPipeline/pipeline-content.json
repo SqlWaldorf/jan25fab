@@ -1,0 +1,59 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Wait1",
+        "type": "Wait",
+        "dependsOn": [],
+        "typeProperties": {
+          "waitTimeInSeconds": 3
+        }
+      },
+      {
+        "name": "Fail1",
+        "type": "Fail",
+        "dependsOn": [
+          {
+            "activity": "Wait1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "message": "test",
+          "errorCode": "123"
+        }
+      },
+      {
+        "name": "Wait2",
+        "type": "Wait",
+        "dependsOn": [
+          {
+            "activity": "Fail1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "typeProperties": {
+          "waitTimeInSeconds": 1
+        }
+      }
+    ],
+    "parameters": {
+      "SourceFolder": {
+        "type": "string",
+        "defaultValue": "sourcefolder"
+      },
+      "SourceDirectory": {
+        "type": "string",
+        "defaultValue": "subfolder"
+      },
+      "LoggingPath": {
+        "type": "string",
+        "defaultValue": "loggingfolder/subfolder"
+      }
+    }
+  }
+}

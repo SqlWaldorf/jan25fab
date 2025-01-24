@@ -1,12 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Notebook",
-    "displayName": "mathdemo",
-    "description": "New notebook"
+    "type": "DataPipeline",
+    "displayName": "pipeline1"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "fb073ecc-f470-413d-802e-4f357a4d2c6f"
+    "logicalId": "8b318718-8683-b33a-4369-04e266a42a08"
   }
 }
